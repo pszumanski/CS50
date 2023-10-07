@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: its instantenous when the array if sorted (no swaps made makes program quit early), however in other cases its speed is largely affected by number of elements in the array
+
+sort2 uses: merge sort
+
+How do you know?: its speed is barely affected by increase in number of elements and is not changed by sorted, reversed nor random array
+
+sort3 uses: selection sort
+
+How do you know?: its speed is largely affected by number of elements in the array, however its speed doesnt increase when given an already sorted array

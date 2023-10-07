@@ -1,0 +1,4 @@
+1) I would calculate weighted average, where the top1 song is the most impactful and top100 the least
+2) It might not be representative of the listener, because, for example, a listener could have played their top songs in one mood, but have listened to much more songs
+in different mood with higher listening time overall, therefore it might not be their most listened to mood. Better way to calculate the aura of a listener would be to
+look at all played songs and calculate time spent in given aura.
