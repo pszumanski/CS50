@@ -1,0 +1,52 @@
+h1 {
+    font-size: 65px;
+    padding: 75px;
+    background-color: deepskyblue;
+    outline-style: solid;
+    outline-color: darkblue;
+    outline-width: 10px;
+    text-shadow: 5px 5px 5px darkblue;
+}
+
+h2 {
+    padding: 40px;
+    font-size: 40px;
+}
+
+body {
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    background-color: black;
+    color:white;
+}
+
+footer {
+    text-align: center;
+    color: gray;
+    font-size: 20px;
+    padding-top: 200px;
+
+}
+
+.list-group {
+    list-style-type: none;
+    padding: 40px;
+}
+
+.list-group-item {
+    background: deepskyblue;
+    margin-bottom: 35px;
+    font-size: 30px;
+}
+
+a:link {
+    color: hotpink;
+}
+
+a:visited {
+    color: orange;
+}
+
+a:hover {
+    color: yellow;
+}

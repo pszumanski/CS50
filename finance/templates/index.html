@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <div>
+        <p><h3>Hello, {{ username }}</h3></p>
+        <p><h4>Balance: {{ balance }}</h4></p>
+        <p><h4>Grand total: {{ total }}</h4></p>
+    </div>
+    <div>
+        <table class="center" style="width:100%">
+            <tr>
+                <th>Stock</th>
+                <th>Shares owned</th>
+                <th>Stock price</th>
+                <th>Total value</th>
+            </tr>
+            {% for row in stocks: %}
+                <tr>
+                    <td>{{ row["stock"] }}</td>
+                    <td>{{ row["shares"] }}</td>
+                    <td>{{ row["price"] | usd }}</td>
+                    <td>{{ (row["shares"] * row["price"]) | usd }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div>
+        <p><h3>Hello, {{ username }}</h3></p>
+        <p><h4>Balance: {{ balance }}</h4></p>
+        <p><h4>Grand total: {{ total }}</h4></p>
+        <p><h3>Your history: </h3></p>
+    </div>
+    <div>
+        <table class="center" style="width:100%">
+            <tr>
+                <th>Date</th>
+                <th>Stock</th>
+                <th>Shares</th>
+                <th>Type of transaction</th>
+                <th>Price</th>
+                <th>Balance change</th>
+            </tr>
+            {% for row in history: %}
+                <tr>
+                    <td>{{ row["date"] }}</td>
+                    <td>{{ row["symbol"] }}</td>
+                    <td>
+                        {% if row["shares"] > 0: %}
+                            {{ row["shares"] }}
+                        {% endif %}
+                        {% if row["shares"] < 0: %}
+                            {{ (-row["shares"]) }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if row["shares"] > 0: %}
+                            <h5 style="color:green">BOUGHT</h5>
+                        {% endif %}
+                        {% if row["shares"] < 0: %}
+                            <h5 style="color:red">SOLD</h5>
+                        {% endif %}
+                    </td>
+                    <td>${{ row["price"] }}</td>
+                    <td>
+                        {% if row["shares"] > 0: %}
+                            -{{ (row["shares"] * row["price"]) | usd }}
+                        {% endif %}
+                        {% if row["shares"] < 0: %}
+                            +{{ ((-row["shares"]) * row["price"]) | usd }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
